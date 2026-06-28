@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css"/>
-<style>
-  .todo{
-    background-color: yellow;
-  }
-</style>
-</head>
+<html>
 <body>
-  <h1>Todo List</h1>
-  <h4 class="todo">1. take class</h4>
-  <h4 class="todo">2. Go</h4>
-  <h4 class="todo">go to gym</h4>
-  <div>
-    <input type="text" placeholder="Add Your todo here"></input>
-    <button id="btn" onclick="addTodo()">Add Todo</button>
+
+<h1>Todo list</h1>
+<div id="todoParent">
+  <div id="todo-1" style="display: flex;">
+    <h4>1. take class</h4>
+    <button onclick="deleteTodo(1)">delete</button>
   </div>
-  <script src="script.js">
-  </script>
-  
+
+  <div id="todo-2" style="display: flex;">
+    <h4>2. go out to eat</h4>
+    <button onclick="deleteTodo(2)">delete</button>
+  </div>
+
+</div>
+
+
+<div>
+  <input type="text">
+  <button>Add Todo</button>
+</div>
+
+
+<script>
+
+function deleteTodo(index) {
+  const element = document.getElementById("todo-" + index);
+  element.parentNode.removeChild(element);
+}
+
+</script>
+
 </body>
 </html>
