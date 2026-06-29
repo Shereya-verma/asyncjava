@@ -1,5 +1,7 @@
- function deleteRandomTodo(){
-  const element = document.querySelector("h2");
-  const parentElement = element.parentNode;
-  parentElement.removeChild(element);
+ function addTodo(){
+  const inputEl = document.querySelector("input");
+  const value = inputEl.value;
+  const newDivEl = document.createElement("div");
+  newDivEl.innerHTML=value;
+  document.querySelector("body").appendChild(newDivEl)
  }
